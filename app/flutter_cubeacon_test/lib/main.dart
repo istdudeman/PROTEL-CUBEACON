@@ -69,7 +69,7 @@ class _BeaconRangingPageState extends State<BeaconRangingPage> {
     _bluetoothCompleter = Completer<void>();
 
     // 3. Listen for Bluetooth state changes
-    flutterBeacon.bluetoothStateChanged.listen((BluetoothState state) {
+    flutterBeacon.bluetoothStateChanged().listen((BluetoothState state) {
       setState(() {
         _bluetoothState = state.toString();
         _bluetoothEnabled = state == BluetoothState.stateOn;
